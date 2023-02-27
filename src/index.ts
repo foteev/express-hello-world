@@ -33,7 +33,7 @@ const startServer = async () => {
     try {
         mongoose.set('strictQuery', true);
         mongoose.connect(DB_URL);
-        app.listen(PORT,() => console.log('Works on port', PORT, app.a));
+        app.listen(PORT,() => console.log('Works on port', PORT));
     } catch (error) {
         console.error(error);
     }
