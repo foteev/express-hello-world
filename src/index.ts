@@ -16,6 +16,8 @@ const DB_URL = `mongodb+srv://${DB_LOGIN}:${DB_PASSWORD}@cluster0.afhplie.mongod
 
 const app = express();
 
+const server = require('https').createServer(app);
+
 app.use(cors());
 app.use(express.json());
 
@@ -30,7 +32,7 @@ const startServer = async () => {
     try {
         mongoose.set('strictQuery', true);
         mongoose.connect(DB_URL);
-        app.listen(PORT, '0.0.0.0',() => console.log('It work WOW!'));
+        server.listen(PORT,() => console.log(server.address()));
     } catch (error) {
         console.error(error);
     }
