@@ -11,7 +11,7 @@ import authRouter from './routers/authentication-router.js';
 
 const DB_LOGIN = 'palletenjoer';
 const DB_PASSWORD = 87654321;
-const PORT = 10000;
+const PORT = process.env.PORT || 3333;
 
 const DB_URL = `mongodb+srv://${DB_LOGIN}:${DB_PASSWORD}@cluster0.afhplie.mongodb.net/Palletport?retryWrites=true&w=majority`
 
