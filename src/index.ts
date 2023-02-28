@@ -7,17 +7,14 @@ import productRouter from './routers/product-router.js';
 import productCategoryRouter from './routers/product-сategory-router.js';
 import userRouter from './routers/user-router.js';
 import authRouter from './routers/authentication-router.js';
-// import https from 'express-https';'
 
 const DB_LOGIN = 'palletenjoer';
 const DB_PASSWORD = 87654321;
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT ?? 5300;
 
 const DB_URL = `mongodb+srv://${DB_LOGIN}:${DB_PASSWORD}@cluster0.afhplie.mongodb.net/Palletport?retryWrites=true&w=majority`
 
 const app = express();
-
-// const server = require('https').createServer(app);
 
 app.use(cors());
 app.use(express.json());
@@ -33,7 +30,7 @@ const startServer = async () => {
     try {
         mongoose.set('strictQuery', true);
         mongoose.connect(DB_URL);
-        app.listen(PORT,() => console.log('Works on port', PORT));
+        app.listen(PORT, () => console.log('It work WOW!'));
     } catch (error) {
         console.error(error);
     }
